@@ -1,9 +1,5 @@
 
-
-
-
 // import MyVideo from "../../src/pages/video1.mp4"
-
 
 import React, {useEffect, useRef, useState} from 'react';
 
@@ -31,7 +27,6 @@ import {
     FormLabel,
     Switch, TextField
 } from "@mui/material";
-
 
 const SwiperHerou: React.FC = () => {
 
