@@ -1,4 +1,4 @@
-import {put, fork, select, takeEvery, takeLatest, call} from 'redux-saga/effects';
+import {put, select, takeLatest, call} from 'redux-saga/effects';
 
 import {retDatabase_type1} from '../state_reducers/types'
 
@@ -20,7 +20,7 @@ const to_do_function = async (action_to_exec: any) => {
 
         var retDatabase: retDatabase_type1 = {ret_database: '', ret_sqlite_api_global:'', ret_code: 'ERROR'}
 
-        const monent = (Date.now()).toString();
+        // const monent = (Date.now()).toString();
 
         var handle_sqlite = action_to_exec.action.params_to_exec.sqlite_api_global;
 

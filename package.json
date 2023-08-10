@@ -27,6 +27,7 @@
     "@types/react-router": "^5.1.11",
     "@types/react-router-dom": "^5.1.7",
     "@types/react-window": "^1.8.5",
+    "eslint": "8.22.0",
     "history": "^4.9.0",
     "ionicons": "^6.0.3",
     "jeep-sqlite": "^2.4.1",

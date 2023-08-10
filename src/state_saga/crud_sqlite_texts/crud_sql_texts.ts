@@ -88,13 +88,17 @@ function array_crud_sql_texts_basic_combine(params:any):string {
     
             `
                         var replace_str=''
-                        Object.entries(operation_data).map((el:any,ii:any)=>{
-                                // console.log("=== step_ keys ",el,ii)
-                                replace_str=replace_str + el[0]+" = '"+el[1]+"' " + ','
-                        })
+                        // Object.entries(operation_data).map((el:any,ii:any)=>{
+                        //         // console.log("=== step_ keys ",el,ii)
+                        //         replace_str=replace_str + el[0]+" = '"+el[1]+"' ,"
+                        // })
+
+                            for (const jj of operation_data) {
+                                const el=operation_data[jj]
+                                replace_str=replace_str + el[0]+" = '"+el[1]+"' ,"
+                            }
 
                                 replace_str=replace_str.substring(0,replace_str.length-1)
-
 
                         const res = init_str.replace("SET here","SET " + replace_str)
                         // console.log("=== step_ res ",res)
