@@ -1,6 +1,5 @@
 
 
-
 import React, {useCallback, useEffect, useRef, useState} from "react";
 import { FixedSizeGrid} from "react-window";
 import memoize from 'memoize-one';
@@ -8,7 +7,6 @@ import memoize from 'memoize-one';
 import {closestCenter, DndContext, DragOverlay, PointerSensor, useSensor, useSensors} from "@dnd-kit/core";
 import {arrayMove, rectSortingStrategy, rectSwappingStrategy, SortableContext} from "@dnd-kit/sortable";
 import {GridMemoCellDND} from "./GridMemoCellDND";
-
 
 const createItemData = memoize((list_data, toggleItemActive ) => ({
     list_data,
@@ -37,6 +35,7 @@ function GridMemo(props) {
     });
 
     useEffect(() => {
+
         if(
             props.grid_number_of_columns!==state.number_of_columns
             ||
@@ -73,7 +72,7 @@ function GridMemo(props) {
 
     //!!! on_MOBILE SSS
 
-    // const sensors = useSensors(
+    // const sensors_for_dnd = useSensors(
     //     useSensor(TouchSensor),
     //     // useSensor(KeyboardSensor, {
     //     //     coordinateGetter: sortableKeyboardCoordinates
@@ -82,7 +81,7 @@ function GridMemo(props) {
 
     //!!! on_DESKTOP SSS
 
-    const sensors = useSensors(
+    const sensors_for_dnd = useSensors(
         useSensor(PointerSensor
             , {
                 activationConstraint: {
@@ -211,7 +210,7 @@ function GridMemo(props) {
             <div name={'grid_memo'}>
 
                 <DndContext
-                    sensors={sensors}
+                    sensors={sensors_for_dnd}
                     collisionDetection={closestCenter}
                     onDragStart={handleDragStart}
                     onDragEnd={(e)=>handleDragEnd(e,state.changes_type)}
@@ -229,17 +228,17 @@ function GridMemo(props) {
                         <FixedSizeGrid
                             className="class_style_grid"
 
+                            ref={gridRef}
+
                             columnCount={state.number_of_columns} //number_of_columns
                             rowCount={state.number_of_rows} //number_of_rows
 
+                            // W1
                             columnWidth={150}
                             rowHeight={200}
 
-                            ref={gridRef}
-
-                            // W1
-                            width={500}
-                            height={300}
+                            width={500} // grid area
+                            height={300} // grid area
 
                             style={
                                 {display:'flex', flexDirection:'column',alignContent:'space-between'}

@@ -1,5 +1,6 @@
 
 
+
 // git remote add origin https://github.com/fotomain/vit_ionic_play1.git
 // ionic build
 // ionic build--prod; ionic cap copy --prod; ionic serve
@@ -42,10 +43,11 @@ const App: React.FC = () => (
       <IonContent fullscreen>
 
           <AppInitRedux />
-          <SwiperHerou/>
+          {/*<SwiperHerou/>*/}
 
       </IonContent>
   </IonApp>
 );
 
 export default App;
+

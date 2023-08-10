@@ -62,6 +62,7 @@ const GridMemoPage =(props:any)=> {
     const i1: any[] = []
     const [state, setState] = useState({
         // items:i1,
+        // w1
         number_of_columns:3,
         number_of_rows:0,
         list_data:props.list_data,

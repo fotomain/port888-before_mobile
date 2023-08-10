@@ -112,8 +112,9 @@ window.addEventListener('DOMContentLoaded', async () => {
         // reportWebVitals();
 
     } catch (err) {
-        console.log(`Error: ${err}`);
-        throw new Error(`Error: ${err}`)
+        alert(`=== index.tsx Error: ${err}`);
+        console.log(`=== index.tsx Error: ${err}`);
+        throw new Error(`=== index.tsx Error: ${err}`)
     }
 
 });
