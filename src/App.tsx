@@ -41,20 +41,10 @@ setupIonicReact();
 
 const App: React.FC = () => (
 
-    <div>
+    <div id={'div_main'}>
         <MainlStyles />
         <AppInitRedux />
     </div>
-
-  // <IonApp>
-  //     {/*https://www.freecodecamp.org/news/css-positioning-and-flexbox-explained/*/}
-  //     <IonContent fullscreen>
-  //
-  //         <AppInitRedux />
-  //         {/*<SwiperHerou/>*/}
-  //
-  //     </IonContent>
-  // </IonApp>
 
 );
 
