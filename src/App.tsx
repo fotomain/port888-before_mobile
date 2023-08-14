@@ -33,9 +33,10 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-import AppInitRedux from "./AppInitRedux";
+import AppInitReduxData from "./AppInitReduxData";
 
 import MainlStyles from './theme/main_styled'
+import AppInitGlobalsContext from "./AppInitGlobalsContext";
 
 setupIonicReact();
 
@@ -43,7 +44,7 @@ const App: React.FC = () => (
 
     <div id={'div_main'}>
         <MainlStyles />
-        <AppInitRedux />
+        <AppInitGlobalsContext />
     </div>
 
 );

@@ -8,7 +8,7 @@ import configureStore from './state_redux/store';
 import AppInitDatabase from "./AppInitDatabase";
 const store = configureStore({  });
 
-const AppInitRedux=()=>{
+const AppInitReduxData=()=>{
 
     return(
 
@@ -22,4 +22,4 @@ const AppInitRedux=()=>{
 
 }
 
-export default AppInitRedux
+export default AppInitReduxData

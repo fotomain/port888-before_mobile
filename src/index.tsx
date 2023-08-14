@@ -10,7 +10,7 @@ import { defineCustomElements as jeepSqlite, applyPolyfills, JSX as LocalJSX  } 
 import { HTMLAttributes } from 'react';
 import { Capacitor } from '@capacitor/core';
 import { CapacitorSQLite, SQLiteConnection, SQLiteDBConnection } from '@capacitor-community/sqlite';
-import AppInitRedux from "./AppInitRedux";
+import AppInitReduxData from "./AppInitReduxData";
 import SwiperHerou from "./pages/SwiperHerou";
 import App from "./App";
 

@@ -17,6 +17,7 @@ import store from "./state_redux/store";
 import {f_read_from_states} from "./code_global/GlobalFunctions";
 import {crud_exec_function} from "./state_saga/crud_exec_function";
 import GridMemoPage from "./GridMemo/GridMemoPage";
+import {GlobalsContext} from "./context_globals/globals_context";
 
 
 interface JsonListenerInterface {
@@ -37,6 +38,7 @@ export let existingConn: existingConnInterface;
 export let isJsonListeners: JsonListenerInterface;
 // mysettigs -
 
+const { global_props, global_dispatch } = React.useContext(GlobalsContext);
 
 const AppInitDatabase: React.FC = (props:any) => {
 
@@ -319,9 +321,11 @@ const AppInitDatabase: React.FC = (props:any) => {
         }
     }
 
-        return(
+
+    return(
         <>
 
+            <p>global_props.current_application.title  {global_props.current_application.title}</p>
             <p>InputTest Redux level 1692000318188 {Date.now()}</p>
 
             <input id={'edit_id_'+'title_'}
@@ -329,15 +333,14 @@ const AppInitDatabase: React.FC = (props:any) => {
                    name={'test1_field'}
                    onChange={(e)=> {
                        handleChange(e)
-                   }} value={state.test1_field} />
+                   }} value={state.test1_field}
+            />
 
             <GridMemoPage/>
         </>
     )
 
 }
-
-
 
 //mysettigs +
 
