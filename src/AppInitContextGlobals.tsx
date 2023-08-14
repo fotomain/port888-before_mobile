@@ -10,10 +10,10 @@ interface Props  {
     children?:JSX.Element
 }
 
-const AppInitGlobalsContext: React.FC<Props> = (props:Props) => {
+const AppInitContextGlobals: React.FC<Props> = (props:Props) => {
 
-    console.log("=== store AppInitGlobalsContext props",props)
-    console.log("=== step_ AppInitGlobalsContext props",props)
+    console.log("=== store AppInitContextGlobals props",props)
+    console.log("=== step_ AppInitContextGlobals props",props)
 
     const [state_globals_provider, set_state_globals_provider] = useState(Date.now());
     useEffect(() => {
@@ -38,4 +38,4 @@ const AppInitGlobalsContext: React.FC<Props> = (props:Props) => {
 
 }
 
-export default AppInitGlobalsContext
+export default AppInitContextGlobals

@@ -36,7 +36,7 @@ import './theme/variables.css';
 import AppInitReduxData from "./AppInitReduxData";
 
 import MainlStyles from './theme/main_styled'
-import AppInitGlobalsContext from "./AppInitGlobalsContext";
+import AppInitContextGlobals from "./AppInitContextGlobals";
 
 setupIonicReact();
 
@@ -44,7 +44,7 @@ const App: React.FC = () => (
 
     <div id={'div_main'}>
         <MainlStyles />
-        <AppInitGlobalsContext />
+        <AppInitContextGlobals />
     </div>
 
 );

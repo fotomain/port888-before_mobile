@@ -7,9 +7,11 @@ interface Props  {
     children?:JSX.Element
 }
 
-const { global_props, global_dispatch } = React.useContext(GlobalsContext);
 
 const AppInitFirebaseSettings: React.FC<Props> = (props:Props) => {
+
+    const { global_props, global_dispatch } = React.useContext(GlobalsContext);
+
 
     return(
         <>
