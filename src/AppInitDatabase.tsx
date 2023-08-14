@@ -321,7 +321,10 @@ const AppInitDatabase: React.FC = (props:any) => {
 
         return(
         <>
-            <p>InputTest Redux level 10 </p>
+
+            {/*<p>InputTest Redux level {Date.now()} </p>*/}
+            <p>InputTest Redux level 1692000318188 {Date.now()}</p>
+
             <input id={'edit_id_'+'title_'}
                    type="text"
                    name={'test1_field'}
