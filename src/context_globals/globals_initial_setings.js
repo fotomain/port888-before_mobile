@@ -243,8 +243,8 @@ initial_setings.current_user.crud.update_and_display_mode = 'maximalistic'
 //============== current_user end
 
 initial_setings.current_application={} //=============================== APP
-initial_setings.current_application.title= {text:'PWA Application'}
-initial_setings.current_application.title.text='555 All Best Posts' // image, color
+initial_setings.current_application.title= {}
+initial_setings.current_application.title.text='PWA Application' // image, color
 initial_setings.current_application.title.mode_show=true
 initial_setings.current_application.title.mode_position='left' // left middle rigth
 
