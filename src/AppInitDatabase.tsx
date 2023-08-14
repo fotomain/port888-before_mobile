@@ -38,9 +38,9 @@ export let existingConn: existingConnInterface;
 export let isJsonListeners: JsonListenerInterface;
 // mysettigs -
 
-const { global_props, global_dispatch } = React.useContext(GlobalsContext);
-
 const AppInitDatabase: React.FC = (props:any) => {
+
+    const { global_props, global_dispatch } = React.useContext(GlobalsContext);
 
     //mysettigs +
     const message = useRef("");
@@ -307,7 +307,6 @@ const AppInitDatabase: React.FC = (props:any) => {
 
             }
 
-
             props.function_AT_CRUD_EXEC({
                 database_to_exec: props.work_sqlile_database,
                 sqlite_api_global_to_exec: props.work_sqlite_api_global,
@@ -321,11 +320,10 @@ const AppInitDatabase: React.FC = (props:any) => {
         }
     }
 
-
     return(
         <>
 
-            <p>global_props.current_application.title  {global_props.current_application.title}</p>
+            <p>global_props.current_application.title  {global_props.current_application.title.text}</p>
             <p>InputTest Redux level 1692000318188 {Date.now()}</p>
 
             <input id={'edit_id_'+'title_'}
@@ -337,6 +335,7 @@ const AppInitDatabase: React.FC = (props:any) => {
             />
 
             <GridMemoPage/>
+
         </>
     )
 

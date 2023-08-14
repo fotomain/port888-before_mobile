@@ -1,6 +1,6 @@
+
 import {drawer_left_width} from "./globals_types";
 import {History, DisplaySettings, MessageOutlined, VerifiedUserOutlined} from "@mui/icons-material";
-import {onAuthStateChanged} from "firebase/auth";
 
 export var initial_setings = {}
 
@@ -162,7 +162,7 @@ initial_setings.theme.layout.all_applications.card.part_up.height = '124px'
 
 //=================== navigation
 
-initial_setings.is_ready=false
+initial_setings.is_ready=true
 
 initial_setings.navigation={}
 initial_setings.navigation.visibility={}
@@ -243,7 +243,7 @@ initial_setings.current_user.crud.update_and_display_mode = 'maximalistic'
 //============== current_user end
 
 initial_setings.current_application={} //=============================== APP
-initial_setings.current_application.title='PWA Application'
+initial_setings.current_application.title= {text:'PWA Application'}
 initial_setings.current_application.title.text='555 All Best Posts' // image, color
 initial_setings.current_application.title.mode_show=true
 initial_setings.current_application.title.mode_position='left' // left middle rigth
