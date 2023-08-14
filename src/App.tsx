@@ -35,18 +35,27 @@ import './theme/variables.css';
 
 import AppInitRedux from "./AppInitRedux";
 
+import MainlStyles from './theme/main_styled'
+
 setupIonicReact();
 
 const App: React.FC = () => (
-  <IonApp>
-      {/*https://www.freecodecamp.org/news/css-positioning-and-flexbox-explained/*/}
-      <IonContent fullscreen>
 
-          <AppInitRedux />
-          {/*<SwiperHerou/>*/}
+    <div>
+        <MainlStyles />
+        <AppInitRedux />
+    </div>
 
-      </IonContent>
-  </IonApp>
+  // <IonApp>
+  //     {/*https://www.freecodecamp.org/news/css-positioning-and-flexbox-explained/*/}
+  //     <IonContent fullscreen>
+  //
+  //         <AppInitRedux />
+  //         {/*<SwiperHerou/>*/}
+  //
+  //     </IonContent>
+  // </IonApp>
+
 );
 
 export default App;
