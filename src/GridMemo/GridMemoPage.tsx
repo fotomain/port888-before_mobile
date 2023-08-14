@@ -168,6 +168,8 @@ const GridMemoPage =(props:any)=> {
             };
         });
 
+    // const global_props = useSelector(state => state as initialStateStoreType)
+    // const global_dispatch = useDispatch()
 
     const redux_data = useSelector(state => state as initialStateStoreType)
     const redux_dispatch = useDispatch()
