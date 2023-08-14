@@ -249,7 +249,6 @@ initial_setings.current_application.title.mode_show=true
 initial_setings.current_application.title.mode_position='left' // left middle rigth
 
 
-
 // TODO background_color_show background_color_show
 //=== DOC https://angrytools.com/gradient/
 initial_setings.current_device={}
