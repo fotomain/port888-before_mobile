@@ -18,6 +18,7 @@ import {f_read_from_states} from "./code_global/GlobalFunctions";
 import {crud_exec_function} from "./state_saga/crud_exec_function";
 import GridMemoPage from "./GridMemo/GridMemoPage";
 import {GlobalsContext} from "./context_globals/globals_context";
+import FileUploadInput from "./components/FileUploadInput";
 
 
 interface JsonListenerInterface {
@@ -326,6 +327,8 @@ const AppInitLocalDatabase: React.FC = (props:any) => {
 
             <p>global_props.current_application.title <b> {global_props.current_application.title.text} </b> </p>
             <p>Update Post via Redux level 1692000318555 {Date.now()}</p>
+
+            <FileUploadInput />
 
             <input id={'edit_id_'+'title_'}
                    type="text"
