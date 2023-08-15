@@ -38,7 +38,7 @@ export let existingConn: existingConnInterface;
 export let isJsonListeners: JsonListenerInterface;
 // mysettigs -
 
-const AppInitDatabase: React.FC = (props:any) => {
+const AppInitLocalDatabase: React.FC = (props:any) => {
 
     const { global_props, global_dispatch } = React.useContext(GlobalsContext);
 
@@ -78,7 +78,7 @@ const AppInitDatabase: React.FC = (props:any) => {
 
         })
 
-        console.log("=== AppInitDatabase work_sqlile_database START ")
+        console.log("=== AppInitLocalDatabase work_sqlile_database START ")
 
     },[])
 
@@ -96,7 +96,7 @@ const AppInitDatabase: React.FC = (props:any) => {
             IS_LOADING != props.work_sqlile_database
         ) {
 
-            console.log("=== store AppInitDatabase work_sqlile_database FINISH OK! ",props.work_sqlile_database)
+            console.log("=== store AppInitLocalDatabase work_sqlile_database FINISH OK! ",props.work_sqlile_database)
             // props.function_AT_CRUD_EXEC({
             //     database_to_exec: props.work_sqlile_database,
             //     sqlite_api_global_to_exec: props.work_sqlite_api_global,
@@ -276,11 +276,12 @@ const AppInitDatabase: React.FC = (props:any) => {
     // })
 
 
-    console.log("=== props.work_list_content_posts_data AppInitDatabase ",props.work_list_content_posts_data)
+    console.log("=== props.work_list_content_posts_data AppInitLocalDatabase ",props.work_list_content_posts_data)
 
     const [input_value, set_input_value] = useState('');
     const [state, set_state] = useState({
-        test1_field:'text1'
+        test1_field:'text1',
+        test2_field:'New App Titile'
     })
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -303,7 +304,7 @@ const AppInitDatabase: React.FC = (props:any) => {
                     content_post_content: 'Content ' + Date.now(),
 
                     content_post_owner_guid: '',
-                    content_post_guid: '1682929320723',
+                    content_post_guid: '111',
 
             }
 
@@ -323,8 +324,8 @@ const AppInitDatabase: React.FC = (props:any) => {
     return(
         <>
 
-            <p>global_props.current_application.title  {global_props.current_application.title.text}</p>
-            <p>InputTest Redux level 1692000318188 {Date.now()}</p>
+            <p>global_props.current_application.title <b> {global_props.current_application.title.text} </b> </p>
+            <p>Update Post via Redux level 1692000318555 {Date.now()}</p>
 
             <input id={'edit_id_'+'title_'}
                    type="text"
@@ -332,6 +333,26 @@ const AppInitDatabase: React.FC = (props:any) => {
                    onChange={(e)=> {
                        handleChange(e)
                    }} value={state.test1_field}
+            />
+            <br/>
+            <input id={'edit_id_'+'app_title'}
+                   type="text"
+                   name={'test2_field'}
+                   onChange={(e)=> {
+                       console.log("=== e.target.value",e.target.value)
+                       const tu = global_props.current_application
+                       tu.title.text = e.target.value
+                       global_dispatch({type: "SETTER_APPLICATION", global_new_data: {current_application: tu}})
+                       // global_dispatch
+
+                       set_state(
+                           {
+                               ...state,
+                               [e.target.name]: e.target.value,
+                           }
+                       );
+
+                   }} value={state.test2_field}
             />
 
             <GridMemoPage/>
@@ -376,6 +397,6 @@ const WriteToState_mapDispatchToProps = {
 
 }
 
-export default connect(ReadFromState_mapStateToProps, WriteToState_mapDispatchToProps)(AppInitDatabase);
+export default connect(ReadFromState_mapStateToProps, WriteToState_mapDispatchToProps)(AppInitLocalDatabase);
 
 //mysettigs -

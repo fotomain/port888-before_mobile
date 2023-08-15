@@ -12,7 +12,7 @@ const PostCardField = (props:any) => {
     const [state, set_state] = React.useState({...init_state});
 
     // console.log("=== PostCardField props",props)
-    console.log("=== PostCardField props.props_upper",props.props_upper)
+    // console.log("=== PostCardField props.props_upper",props.props_upper)
 
     const timeoutId = React.useRef(0);
 
