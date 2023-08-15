@@ -326,7 +326,7 @@ const AppInitLocalDatabase: React.FC = (props:any) => {
         <>
 
             <p>global_props.current_application.title <b> {global_props.current_application.title.text} </b> </p>
-            <p>Update Post via Redux level 1692000318555 {Date.now()}</p>
+            <p>Update Post via Redux level 1692000318777 {Date.now()}</p>
 
             <FileUploadInput />
 

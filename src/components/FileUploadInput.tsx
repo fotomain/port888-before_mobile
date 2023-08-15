@@ -1,16 +1,16 @@
 import {Box, Card, Button} from "@mui/material";
-import React from "react";
+import React, {useEffect} from "react";
 
 
 const FileUploadInput: React.FC = () =>{
 
     const [state, setState] = React.useState({
         header1:'',
-        file1:'',
+        file1_data:'',
         //TODO FROM GLOBALS 'background_data_color_value_source_type':  global_props.current_application.background_data_color_value_source_type,
-        // display_box_image:false,
-        // display_box_video:false,
-        // display_box_color:false,
+        display_box_image:false,
+        display_box_video:false,
+        display_box_color:false,
     });
 
     const file_type = (value:any) => {
@@ -65,8 +65,14 @@ const FileUploadInput: React.FC = () =>{
 
             if(file_data) {
 
-                let image = document.createElement('img');
-                image.src = file_data;
+                // let image = document.createElement('img');
+                // image.src = file_data;
+                // image.id='image_test';
+
+                setState({
+                    ...state,
+                    'file1_data': JSON.stringify(file_data)
+                });
 
                 //TODO
                 // const tdata = global_props.current_application
@@ -92,11 +98,19 @@ const FileUploadInput: React.FC = () =>{
         console.log("=== getFile ",e)
         if(e.target && e.target.files) {
             const file1 = e.target.files[0];
-            setState({...state, "file1": file1});
             file_get_from_input_target(file1);
         }
     };
 
+    useEffect(() => {
+        if(state.file1_data!=='') {
+            // .substr(0, 40)
+            alert('=== state.file1 ' + state.file1_data )
+        }
+        return () => {
+
+        };
+    }, [state.file1_data]);
 
     return (
 
