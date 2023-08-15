@@ -46,11 +46,14 @@ const AppInitFirebaseSettings: React.FC<Props> = (props:Props) => {
             } else {
 
                 console.log("=== onAuthStateChanged user_result  !!!!!! sign signIn", user_result)
+
                     //=== !!!!! firebase assigned uid
                     const udata = global_props.current_user
-                    udata.user_guid = user_result.uid
                     udata.logged_in_auth_info = auth
-                    //CHANGE STEPS 2 signIn onAuthStateChanged goolge
+                    udata.user_guid = user_result.uid
+                    udata.first_name =user_result.displayName
+                    //TODO
+                    udata.last_name  =user_result.displayName
                     udata.step_logged_in = true
                     udata.step_can_after_logged_in = true
 
