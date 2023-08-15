@@ -12,14 +12,12 @@ const AppInitFirebaseSettings: React.FC<Props> = (props:Props) => {
 
     const { global_props, global_dispatch } = React.useContext(GlobalsContext);
 
-
     return(
         <>
             {(!global_props.is_ready)
                 ?
                 <div>Loading settings...</div>
                 :
-
                 <AppInitReduxData />
 
             }
