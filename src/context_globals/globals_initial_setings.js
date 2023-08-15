@@ -162,7 +162,8 @@ initial_setings.theme.layout.all_applications.card.part_up.height = '124px'
 
 //=================== navigation
 
-initial_setings.is_ready=true
+initial_setings.is_ready=false
+// initial_setings.is_ready=true
 
 initial_setings.navigation={}
 initial_setings.navigation.visibility={}

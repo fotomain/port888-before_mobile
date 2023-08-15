@@ -1,4 +1,5 @@
 
+
 import React, {ChangeEvent, useEffect, useRef, useState} from "react";
 
 import {
@@ -19,6 +20,11 @@ import {crud_exec_function} from "./state_saga/crud_exec_function";
 import GridMemoPage from "./GridMemo/GridMemoPage";
 import {GlobalsContext} from "./context_globals/globals_context";
 import FileUploadInput from "./components/FileUploadInput";
+import EntranceProviders from "./firebase_stack/EntranceProviders";
+import {Button} from "@mui/material";
+import {sign_out_with_google} from "./firebase_stack/global_google_in_out";
+import {onAuthStateChanged} from "firebase/auth";
+import {auth} from "./firebase_stack/firebase-config";
 
 
 interface JsonListenerInterface {
@@ -80,6 +86,8 @@ const AppInitLocalDatabase: React.FC = (props:any) => {
         })
 
         console.log("=== AppInitLocalDatabase work_sqlile_database START ")
+
+
 
     },[])
 
@@ -325,8 +333,18 @@ const AppInitLocalDatabase: React.FC = (props:any) => {
     return(
         <>
 
+            <p>global_props.current_user.user_guid <b> {global_props.current_user.user_guid} </b> </p>
             <p>global_props.current_application.title <b> {global_props.current_application.title.text} </b> </p>
             <p>Update Post via Redux level 1692000318777 {Date.now()}</p>
+
+            <Button
+                variant="contained"
+                onClick={()=> {
+                    sign_out_with_google()
+                }}
+            >
+                Sign Out
+            </Button>
 
             <FileUploadInput />
 
@@ -358,14 +376,16 @@ const AppInitLocalDatabase: React.FC = (props:any) => {
                    }} value={state.test2_field}
             />
 
+            {/* eslint-disable-next-line react/jsx-no-undef */}
+
+            <EntranceProviders />
+
             <GridMemoPage/>
 
         </>
     )
 
 }
-
-//mysettigs +
 
 const ReadFromState_mapStateToProps = (state:any) =>
 {
@@ -400,6 +420,4 @@ const WriteToState_mapDispatchToProps = {
 
 }
 
-export default connect(ReadFromState_mapStateToProps, WriteToState_mapDispatchToProps)(AppInitLocalDatabase);
-
-//mysettigs -
+export default connect(ReadFromState_mapStateToProps, WriteToState_mapDispatchToProps)(AppInitLocalDatabase)

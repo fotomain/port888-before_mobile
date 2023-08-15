@@ -7,7 +7,7 @@
 // npm i swiper
 //=== DOC COOL https://thetechbee.medium.com/creating-a-slide-using-swiper-js-in-ionic-react-in-5-steps-2022-mobile-app-development-for-52f4cb80d2ce
 
-import React from "react";
+import React, {useEffect} from "react";
 
 import {IonApp, IonContent, IonRouterOutlet, setupIonicReact} from '@ionic/react';
 
@@ -37,17 +37,25 @@ import AppInitReduxData from "./AppInitReduxData";
 
 import MainlStyles from './theme/main_styled'
 import AppInitContextGlobals from "./AppInitContextGlobals";
+import {onAuthStateChanged} from "firebase/auth";
+import {auth} from "./firebase_stack/firebase-config";
+
 
 setupIonicReact();
 
-const App: React.FC = () => (
 
-    <div id={'div_main'}>
-        <MainlStyles />
-        <AppInitContextGlobals />
-    </div>
 
-);
+const App: React.FC = () => {
+
+     return(
+
+        <div id={'div_main'}>
+            <MainlStyles/>
+            <AppInitContextGlobals/>
+        </div>
+
+     )
+};
 
 export default App;
 
