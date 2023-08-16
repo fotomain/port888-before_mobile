@@ -8,7 +8,7 @@ import userReducer from "./globals_reducer";
 import {TGloabal_context} from "./globals_types";
 import {initial_setings} from "./globals_initial_setings";
 
-import { Device } from '@capacitor/device';
+// import { Device } from '@capacitor/device';
 import internal from "stream";
 
 const initial_logrecs = [
@@ -56,19 +56,19 @@ export function GlobalsProvider(props: IProps) {
         console.log("=== window.screen ",window.screen)
 
         // Device.getId().then((info:any) => {
-        Device.getInfo().then((info:any) => {
-            console.log("=== Device info ");
-            console.log(info);
-            // console.log(info.operatingSystem);
-            const tdata = global_props.current_device
-            tdata.info = info
-            console.log("=== tdata",tdata)
-            global_dispatch({
-                type: 'SETTER_DEVICE',
-                global_new_data:{current_device:tdata},
-            })
-
-        });
+        // Device.getInfo().then((info:any) => {
+        //     console.log("=== Device info ");
+        //     console.log(info);
+        //     // console.log(info.operatingSystem);
+        //     const tdata = global_props.current_device
+        //     tdata.info = info
+        //     console.log("=== tdata",tdata)
+        //     global_dispatch({
+        //         type: 'SETTER_DEVICE',
+        //         global_new_data:{current_device:tdata},
+        //     })
+        //
+        // });
         // js addEventListener on device change in chrome
 
 
